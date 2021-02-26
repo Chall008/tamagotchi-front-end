@@ -1,12 +1,22 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 
 export function App() {
+  const [pets, setPets] = useState({})
+
+  useEffect(async () => {
+    const response = await axios.get(
+      `https://coreyhalltamagotchi.herokuapp.com/api/pets`
+    )
+    setPets(response.data)
+  }, [])
+
   return (
     <>
       <header>
-        <h1>Welcome to my SPA</h1>
-        <nav>
+        <h1>TAMAGOTCHI</h1>
+        {/* <nav>
           <ul>
             <li>
               <Link to="/">Go Home</Link>
@@ -18,11 +28,19 @@ export function App() {
               <Link to="/2">Page 2</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
       </header>
+      <main>
+        <h3>Current Tamagotchi Pets:</h3>
+        <ul className="pets">
+          {Object.entries(pets).map(([petCode, petDetails]) => {
+            return <li key={petDetails.id}>{petDetails.name}</li>
+          })}
+        </ul>
+      </main>
       <Switch>
         <Route exact path="/">
-          Home
+          <button>Home</button>
         </Route>
         <Route exact path="/1">
           Page 1
