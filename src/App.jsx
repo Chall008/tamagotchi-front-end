@@ -22,6 +22,10 @@ export function App() {
         name: newPet,
       }
     )
+    const newPetsList = respone.data
+    const newPetList = { ...pets, newPetsList }
+    setPets(newPetList)
+    setNewPet('')
   }
 
   return (
