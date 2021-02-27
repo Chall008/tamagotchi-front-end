@@ -30,8 +30,8 @@ export function App() {
           </ul>
         </nav> */}
       </header>
-      <main>
-        <h3>Current Tamagotchi Pets:</h3>
+      <main className="pixel-borders pixel-borders--custom">
+        <h3>Current Pets:</h3>
         <ul className="pets">
           {Object.entries(pets).map(([petCode, petDetails]) => {
             return <li key={petDetails.id}>{petDetails.name}</li>
@@ -40,7 +40,7 @@ export function App() {
       </main>
       <Switch>
         <Route exact path="/">
-          <button>Home</button>
+          {/* <button>Home</button> */}
         </Route>
         <Route exact path="/1">
           Page 1
