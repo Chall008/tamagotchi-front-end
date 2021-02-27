@@ -21,7 +21,6 @@ header {
   justify-content: center;
   color: #141414;
 
-  // letter-spacing: 0.1em;
   // text-shadow: 0 -1px 0 rgb(3, 3, 3), 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c,
   //   0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424,
   //   0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c,
@@ -29,6 +28,30 @@ header {
   //   0 15px 0 #121212, 0 22px 30px;
   // color: #e0dfdc;
 }
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+a:link,
+a:visited {
+  color: rgb(36, 41, 46);
+  text-decoration: none;
+}
+a:focus,
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
 main {
   font-family: 'press start 2p', cursive;
   display: flex;
@@ -38,7 +61,7 @@ main {
   // border-radius: 25px 25px 25px 25px;
   box-sizing: border-box;
 
-  align-items: center;
+  // align-items: center;
   text-align: center;
   background-color: rgb(211, 224, 213);
   color: rgb(107, 147, 116);
@@ -53,5 +76,16 @@ main ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
+  text-align: center;
+}
+form input {
+  font-family: 'press start 2p', cursive;
+  background-color: rgb(228, 237, 229);
+  color: rgb(107, 147, 116);
+  text-align: center;
+}
+footer h6 {
+  display: flex;
+  color: rgb(250, 103, 157);
 }
