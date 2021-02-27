@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
+@import 'node_modules/pixel-borders/src/styles/pixel-borders/pixel-borders-mixins';
 :root {
   font: 16px / 1 sans-serif;
 }
@@ -15,11 +15,12 @@ body {
 }
 
 header {
+  letter-spacing: 0.4em;
   font-family: 'Press Start 2P', cursive;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: #141414;
+  color: rgb(32, 32, 32);
 
   // text-shadow: 0 -1px 0 rgb(3, 3, 3), 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c,
   //   0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424,
@@ -57,7 +58,7 @@ main {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  border: ridge #02070b;
+  // border: thin solid #02070b;
   // border-radius: 25px 25px 25px 25px;
   box-sizing: border-box;
 
@@ -75,7 +76,18 @@ main {
   background-repeat: no-repeat;
 
   animation: animatedBackground 60s linear infinite;
+  cursor: pointer;
+  @include pixel-borders();
+  @include pixel-borders(
+    $corner-size: 2,
+    $border-size: 5px,
+    $border-color: rgb(34, 34, 34),
+    $border-inset-color: false
+  );
 }
+// Add pixel borders with default options
+
+// Available options
 
 main ul {
   list-style: none;
