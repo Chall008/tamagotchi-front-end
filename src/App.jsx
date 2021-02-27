@@ -46,7 +46,7 @@ export function App() {
         {/* </ul>
         </nav> */}
       </header>
-      <main className="pixel-borders pixel-borders--custom">
+      <main>
         <h3>Current Pets:</h3>
         <ul className="pets">
           {Object.entries(pets).map(([petCode, petDetails]) => {
