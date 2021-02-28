@@ -88,14 +88,14 @@ export function PetInfoPage() {
       </StyledBox>
 
       <div className="pet-buttons">
-        <button className="play" onClick={playWithPet}>
-          Play
+        <button title="Play" className="play" onClick={playWithPet}>
+          P
         </button>
-        <button className="feed" onClick={feedPet}>
-          Feed
+        <button title="Feed" className="feed" onClick={feedPet}>
+          F
         </button>
-        <button className="scold" onClick={scoldPet}>
-          Scold
+        <button title="Scold" className="scold" onClick={scoldPet}>
+          S
         </button>
       </div>
     </>

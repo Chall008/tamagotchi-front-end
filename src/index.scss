@@ -21,6 +21,7 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   color: rgb(32, 32, 32);
+  text-shadow: 2px 2px 2px rgb(250, 103, 157);
 }
 
 nav {
@@ -77,6 +78,9 @@ a:active {
   );
 }
 
+.styled-box .button {
+}
+
 .styled-box::before {
   content: '';
   position: absolute;
@@ -93,8 +97,8 @@ a:active {
   opacity: 0.3;
 }
 
-.styled-box .button {
-  flex-direction: row;
+.button:active {
+  padding: 8px;
 }
 // Add pixel borders with default options
 
@@ -130,7 +134,7 @@ footer {
   display: flex;
 
   justify-content: center;
-  color: rgb(250, 103, 157);
+  color: rgb(250, 134, 177);
 }
 button {
   background-color: rgb(228, 237, 229);
@@ -164,7 +168,7 @@ button {
   .play:active {
     color: black;
     background-color: rgb(250, 103, 157);
-    padding: 8px;
+    padding: 10px;
   }
   .feed {
     font-family: 'Press Start 2P', cursive;
@@ -184,7 +188,7 @@ button {
   .feed:active {
     color: black;
     background-color: rgb(250, 103, 157);
-    padding: 8px;
+    padding: 10px;
   }
   .scold {
     font-family: 'Press Start 2P', cursive;
@@ -204,6 +208,6 @@ button {
   .scold:active {
     color: black;
     background-color: rgb(250, 103, 157);
-    padding: 8px;
+    padding: 10px;
   }
 }
