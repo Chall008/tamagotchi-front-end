@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, Route, Switch, useHistory, useParams } from 'react-router-dom'
 import { PetListPage } from './pages/PetListPage'
+import { PetInfoPage } from './pages/PetInfoPage'
 
 export function App() {
   return (
