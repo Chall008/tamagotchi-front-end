@@ -10,19 +10,6 @@ export function App() {
     <>
       <header>
         <h1>TAMAGOTCHI</h1>
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/">Add</Link>
-            </li>
-            <li>
-              <Link to="/1">About</Link>
-            </li>
-            {/* <li>
-              <Link to="/2">Page 2</Link>
-            </li> */}
-        {/* </ul>
-        </nav> */}
       </header>
       <main>
         <Switch>

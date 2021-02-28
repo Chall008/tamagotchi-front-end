@@ -21,13 +21,6 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   color: rgb(32, 32, 32);
-
-  // text-shadow: 0 -1px 0 rgb(3, 3, 3), 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c,
-  //   0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424,
-  //   0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c,
-  //   0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414,
-  //   0 15px 0 #121212, 0 22px 30px;
-  // color: #e0dfdc;
 }
 
 nav {
@@ -53,10 +46,26 @@ a:active {
   text-decoration: black underline;
 }
 
+.styled-box::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0px;
+  right: 0px;
+
+  background-image: url(images/tamagotchi-pixel.webp);
+  background-position: 0px;
+  background-repeat: no-repeat;
+  animation: animatedBackground 70s linear infinite;
+  opacity: 0.6;
+}
+
 .styled-box {
-  min-height: 50vh;
+  position: relative;
+  min-height: 10vh;
   margin: 0 auto;
-  max-width: 80vw;
+  max-width: 300vw;
   font-family: 'press start 2p', cursive;
   display: flex;
   justify-content: center;
@@ -73,10 +82,6 @@ a:active {
   -webkit-box-shadow: 5px 5px 15px 4px rgba(0, 0, 0, 0.61);
   box-shadow: -10px 0px 13px -7px rgb(15, 3, 7), 10px 0px 13px -7px rgb(5, 3, 3),
     5px 5px 15px 5px rgb(250, 103, 157);
-  background-image: url(images/tamagotchi-pixel.webp);
-  background-position: 0px;
-  background-repeat: no-repeat;
-  animation: animatedBackground 70s linear infinite;
   cursor: pointer;
   @include pixel-borders();
   @include pixel-borders(
@@ -85,6 +90,9 @@ a:active {
     $border-color: rgb(34, 34, 34),
     $border-inset-color: false
   );
+}
+.styled-box button {
+  margin: 0.2em;
 }
 // Add pixel borders with default options
 
@@ -126,8 +134,11 @@ button {
 }
 
 .pet-buttons {
-  // margin-top: 3rem;
-  // padding: 2rem;
+  // background-image: url(images/button.png);
+  // background-repeat: no-repeat;
+  margin-top: 2rem;
+  padding: 2rem;
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
 }

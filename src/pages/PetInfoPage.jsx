@@ -2,8 +2,10 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, Route, Switch, useHistory, useParams } from 'react-router-dom'
 import { StyledBox } from '../components/StyledBox'
+import format from 'date-fns/format'
 
 export function PetInfoPage() {
+  const dateFormat = `EEEE, MMMM do, yyyy 'at' h:mm aaa`
   const [petInfo, setPetInfo] = useState({
     id: undefined,
   })
@@ -66,11 +68,14 @@ export function PetInfoPage() {
 
   return (
     <>
-      <StyledBox extraClassName="pet-info">
+      <StyledBox>
         <p>Pet Name:{petInfo.name}</p>
         <p>Hunger Level:{petInfo.hungerLevel}</p>
         <p>Happiness Level:{petInfo.happinessLevel}</p>
-        <p>Birthday:{petInfo.birthday}</p>
+        <p>
+          Born:
+          <time>{format(new Date(petInfo.birthday), dateFormat)}</time>
+        </p>
       </StyledBox>
 
       <div className="pet-buttons">
