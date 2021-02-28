@@ -152,7 +152,7 @@ button {
     cursor: pointer;
     background-color: rgb(250, 103, 157);
     color: black;
-
+    padding: 6px;
     @include pixel-borders();
     @include pixel-borders(
       $corner-size: 1,
@@ -172,7 +172,7 @@ button {
     cursor: pointer;
     background-color: rgb(250, 103, 157);
     color: black;
-
+    padding: 6px;
     @include pixel-borders();
     @include pixel-borders(
       $corner-size: 1,
@@ -192,7 +192,7 @@ button {
     cursor: pointer;
     background-color: rgb(250, 103, 157);
     color: black;
-
+    padding: 6px;
     @include pixel-borders();
     @include pixel-borders(
       $corner-size: 1,
@@ -204,6 +204,6 @@ button {
   .scold:active {
     color: black;
     background-color: rgb(250, 103, 157);
-    padding: 3px;
+    padding: 8px;
   }
 }

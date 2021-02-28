@@ -80,10 +80,10 @@ export function PetInfoPage() {
           Born:<time>{format(new Date(petInfo.birthday), dateFormat)}</time>
         </p>
         <span className="button" onClick={deletePet}>
-          Delete
+          -Delete-
         </span>
         <span className="button" onClick={goHome}>
-          Home
+          -Home-
         </span>
       </StyledBox>
 
