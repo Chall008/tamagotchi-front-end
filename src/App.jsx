@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Link, Route, Switch } from 'react-router-dom'
+import { Link, Route, Switch, useHistory, useParams } from 'react-router-dom'
 import { PetListPage } from './pages/PetListPage'
 
 export function App() {
@@ -23,15 +23,19 @@ export function App() {
         </nav> */}
       </header>
       <main>
-        <PetListPage />
+        <Switch>
+          <Route exact path="/">
+            <PetListPage />
+          </Route>
+          <Route path="/pets/:id">
+            <PetInfoPage />
+          </Route>
+        </Switch>
       </main>
       <footer>
         <h6>Created by: Corey Hall</h6>
       </footer>
-      <Switch>
-        <Route exact path="/">
-          {/* Home */}
-        </Route>
+      {/* <Switch>
         <Route exact path="/1">
           Page 1
         </Route>
@@ -39,7 +43,7 @@ export function App() {
           Page 2
         </Route>
         <Route path="*">Not Found</Route>
-      </Switch>
+      </Switch> */}
     </>
   )
 }
