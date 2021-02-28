@@ -35,7 +35,7 @@ export function PetListPage() {
         {Object.entries(pets).map(([petCode, petDetails]) => {
           return (
             <li key={petDetails.id}>
-              <Link to={`/pets/${petDetails.id}`}>{petDetails.name} </Link>{' '}
+              <Link to={`/pets/${petDetails.id}`}> {petDetails.name} </Link>
             </li>
           )
         })}

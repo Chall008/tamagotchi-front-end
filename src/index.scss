@@ -11,7 +11,7 @@ html {
 body {
   margin: 0;
   min-height: 100%;
-  background-color: rgb(255, 180, 207);
+  background-color: rgb(255, 162, 196);
 }
 
 header {
@@ -46,21 +46,6 @@ a:active {
   text-decoration: black underline;
 }
 
-.styled-box::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0px;
-  right: 0px;
-
-  background-image: url(images/tamagotchi-pixel.webp);
-  background-position: 0px;
-  background-repeat: no-repeat;
-  animation: animatedBackground 70s linear infinite;
-  opacity: 0.6;
-}
-
 .styled-box {
   position: relative;
   min-height: 10vh;
@@ -91,8 +76,25 @@ a:active {
     $border-inset-color: false
   );
 }
-.styled-box button {
-  margin: 0.2em;
+
+.styled-box::before {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  bottom: 0px;
+  right: 0px;
+
+  background-image: url(images/tamagotchi-pixel.webp);
+  background-position: 0px;
+  background-repeat: no-repeat;
+  animation: animatedBackground 70s linear infinite;
+  opacity: 0.3;
+}
+
+.styled-box .button {
+  flex-direction: row;
 }
 // Add pixel borders with default options
 
@@ -124,8 +126,10 @@ form input {
   color: rgb(107, 147, 116);
   text-align: center;
 }
-footer h6 {
+footer {
   display: flex;
+
+  justify-content: center;
   color: rgb(250, 103, 157);
 }
 button {
@@ -134,11 +138,72 @@ button {
 }
 
 .pet-buttons {
-  // background-image: url(images/button.png);
-  // background-repeat: no-repeat;
+  align-items: center;
+  padding: auto;
   margin-top: 2rem;
-  padding: 2rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-direction: row;
+
+  .play {
+    font-family: 'Press Start 2P', cursive;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(250, 103, 157);
+    color: black;
+
+    @include pixel-borders();
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: 10px,
+      $border-color: rgb(34, 34, 34),
+      $border-inset-color: false
+    );
+  }
+  .play:active {
+    color: black;
+    background-color: rgb(250, 103, 157);
+    padding: 8px;
+  }
+  .feed {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(250, 103, 157);
+    color: black;
+
+    @include pixel-borders();
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: 10px,
+      $border-color: rgb(34, 34, 34),
+      $border-inset-color: false
+    );
+  }
+  .feed:active {
+    color: black;
+    background-color: rgb(250, 103, 157);
+    padding: 8px;
+  }
+  .scold {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(250, 103, 157);
+    color: black;
+
+    @include pixel-borders();
+    @include pixel-borders(
+      $corner-size: 1,
+      $border-size: 10px,
+      $border-color: rgb(34, 34, 34),
+      $border-inset-color: false
+    );
+  }
+  .scold:active {
+    color: black;
+    background-color: rgb(250, 103, 157);
+    padding: 3px;
+  }
 }

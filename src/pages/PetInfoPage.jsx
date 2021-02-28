@@ -43,7 +43,7 @@ export function PetInfoPage() {
     )
     setPetInfo(updatePlay.data)
   }
-  async function scoldPet(event) {
+  async function scoldPet() {
     const response = await axios.post(
       `https://coreyhalltamagotchi.herokuapp.com/api/pets/${id}/scoldings`
     )
@@ -66,6 +66,10 @@ export function PetInfoPage() {
     history.push('/')
   }
 
+  if (petInfo.id === undefined) {
+    return <div></div>
+  }
+
   return (
     <>
       <StyledBox>
@@ -73,17 +77,26 @@ export function PetInfoPage() {
         <p>Hunger Level:{petInfo.hungerLevel}</p>
         <p>Happiness Level:{petInfo.happinessLevel}</p>
         <p>
-          Born:
-          <time>{format(new Date(petInfo.birthday), dateFormat)}</time>
+          Born:<time>{format(new Date(petInfo.birthday), dateFormat)}</time>
         </p>
+        <span className="button" onClick={deletePet}>
+          Delete
+        </span>
+        <span className="button" onClick={goHome}>
+          Home
+        </span>
       </StyledBox>
 
       <div className="pet-buttons">
-        <button onClick={playWithPet}>Play</button>
-        <button onClick={feedPet}>Feed</button>
-        <button onClick={scoldPet}>Scold</button>
-        <button onClick={deletePet}>Delete</button>
-        <button onClick={goHome}>Home</button>
+        <button className="play" onClick={playWithPet}>
+          Play
+        </button>
+        <button className="feed" onClick={feedPet}>
+          Feed
+        </button>
+        <button className="scold" onClick={scoldPet}>
+          Scold
+        </button>
       </div>
     </>
   )
