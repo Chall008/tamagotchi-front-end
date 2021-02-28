@@ -53,7 +53,10 @@ a:active {
   text-decoration: black underline;
 }
 
-main {
+.styled-box {
+  min-height: 50vh;
+  margin: 0 auto;
+  max-width: 80vw;
   font-family: 'press start 2p', cursive;
   display: flex;
   justify-content: center;
@@ -120,4 +123,11 @@ footer h6 {
 button {
   background-color: rgb(228, 237, 229);
   color: rgb(107, 147, 116);
+}
+
+.pet-buttons {
+  // margin-top: 3rem;
+  // padding: 2rem;
+  display: flex;
+  flex-direction: row;
 }

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, Route, Switch, useHistory, useParams } from 'react-router-dom'
+import { StyledBox } from '../components/StyledBox'
 
 export function PetInfoPage() {
   const [petInfo, setPetInfo] = useState({
@@ -64,16 +65,21 @@ export function PetInfoPage() {
   }
 
   return (
-    <div className="pet-info">
-      <p>Pet Name:{petInfo.name}</p>
-      <p>Hunger Level:{petInfo.hungerLevel}</p>
-      <p>Happiness Level:{petInfo.happinessLevel}</p>
-      <p>Birthday:{petInfo.birthday}</p>
-      <button onClick={playWithPet}>Play</button>
-      <button onClick={feedPet}>Feed</button>
-      <button onClick={scoldPet}>Scold</button>
-      <button onClick={deletePet}>Delete</button>
-      <button onClick={goHome}>Home</button>
-    </div>
+    <>
+      <StyledBox extraClassName="pet-info">
+        <p>Pet Name:{petInfo.name}</p>
+        <p>Hunger Level:{petInfo.hungerLevel}</p>
+        <p>Happiness Level:{petInfo.happinessLevel}</p>
+        <p>Birthday:{petInfo.birthday}</p>
+      </StyledBox>
+
+      <div className="pet-buttons">
+        <button onClick={playWithPet}>Play</button>
+        <button onClick={feedPet}>Feed</button>
+        <button onClick={scoldPet}>Scold</button>
+        <button onClick={deletePet}>Delete</button>
+        <button onClick={goHome}>Home</button>
+      </div>
+    </>
   )
 }

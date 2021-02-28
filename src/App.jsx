@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, Route, Switch, useHistory, useParams } from 'react-router-dom'
 import { PetListPage } from './pages/PetListPage'
 import { PetInfoPage } from './pages/PetInfoPage'
+import { StyledBox } from './components/StyledBox'
 
 export function App() {
   return (
@@ -26,7 +27,9 @@ export function App() {
       <main>
         <Switch>
           <Route exact path="/">
-            <PetListPage />
+            <StyledBox>
+              <PetListPage />
+            </StyledBox>
           </Route>
           <Route path="/pets/:id">
             <PetInfoPage />

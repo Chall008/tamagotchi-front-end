@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { StyledBox } from '../components/StyledBox'
 
 export function PetListPage() {
   const [pets, setPets] = useState({})
