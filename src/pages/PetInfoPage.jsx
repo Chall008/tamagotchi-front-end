@@ -89,13 +89,13 @@ export function PetInfoPage() {
 
       <div className="pet-buttons">
         <button title="Play" className="play" onClick={playWithPet}>
-          P
+          Play
         </button>
         <button title="Feed" className="feed" onClick={feedPet}>
-          F
+          Feed
         </button>
         <button title="Scold" className="scold" onClick={scoldPet}>
-          S
+          Scold
         </button>
       </div>
     </>
