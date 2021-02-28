@@ -44,13 +44,13 @@ nav ul {
 
 a:link,
 a:visited {
-  color: rgb(36, 41, 46);
+  color: rgb(107, 147, 116);
   text-decoration: none;
 }
 a:focus,
 a:hover,
 a:active {
-  text-decoration: underline;
+  text-decoration: black underline;
 }
 
 main {
@@ -116,4 +116,8 @@ form input {
 footer h6 {
   display: flex;
   color: rgb(250, 103, 157);
+}
+button {
+  background-color: rgb(228, 237, 229);
+  color: rgb(107, 147, 116);
 }

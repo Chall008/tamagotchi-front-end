@@ -4,57 +4,76 @@ import { Link, Route, Switch, useHistory, useParams } from 'react-router-dom'
 
 export function PetInfoPage() {
   const [petInfo, setPetInfo] = useState({
-    id: '',
+    id: undefined,
   })
 
   const history = useHistory()
-  const params = useParams()
+  const { id } = useParams()
 
   useEffect(
+    // @ts-ignore
     async function () {
       const response = await axios.get(
-        `https://coreyhalltamagotchi.herokuapp.com/api/pets/${params.id}`
+        `https://coreyhalltamagotchi.herokuapp.com/api/pets/${id}`
       )
 
       setPetInfo(response.data)
     },
-    [params.id]
+    [id]
   )
 
   async function playWithPet() {
-    const respons = await axios.post(
-      `https://coreyhalltamagotchi.herokuapp.com/api/pets/${params.id}/playtimes`
+    const response = await axios.post(
+      `https://coreyhalltamagotchi.herokuapp.com/api/pets/${id}/playtimes`
     )
+    const updatePlay = await axios.get(
+      `https://coreyhalltamagotchi.herokuapp.com/api/pets/${id}`
+    )
+    setPetInfo(updatePlay.data)
   }
   async function feedPet() {
-    const respons = await axios.post(
-      `https://coreyhalltamagotchi.herokuapp.com/api/pets/${params.id}/feedings`
+    const response = await axios.post(
+      `https://coreyhalltamagotchi.herokuapp.com/api/pets/${id}/feedings`
     )
+    const updatePlay = await axios.get(
+      `https://coreyhalltamagotchi.herokuapp.com/api/pets/${id}`
+    )
+    setPetInfo(updatePlay.data)
   }
-  async function scoldPet() {
-    const respons = await axios.post(
-      `https://coreyhalltamagotchi.herokuapp.com/api/pets/${params.id}/scoldings`
+  async function scoldPet(event) {
+    const response = await axios.post(
+      `https://coreyhalltamagotchi.herokuapp.com/api/pets/${id}/scoldings`
     )
+    const updatePlay = await axios.get(
+      `https://coreyhalltamagotchi.herokuapp.com/api/pets/${id}`
+    )
+    setPetInfo(updatePlay.data)
   }
 
   async function deletePet() {
     const response = await axios.delete(
-      `https://coreyhalltamagotchi.herokuapp.com/api/pets/${params.id}`
+      `https://coreyhalltamagotchi.herokuapp.com/api/pets/${id}`
+    )
+    history.push('/')
+  }
+  async function goHome() {
+    const response = await axios.get(
+      `https://coreyhalltamagotchi.herokuapp.com/api/pets/`
     )
     history.push('/')
   }
 
   return (
     <div className="pet-info">
-      <p>{petInfo.name}</p>
-      <p>{petInfo.birthday}</p>
-      <p>{petInfo.hungerLevel}</p>
-      <p>{petInfo.happinessLevel}</p>
+      <p>Pet Name:{petInfo.name}</p>
+      <p>Hunger Level:{petInfo.hungerLevel}</p>
+      <p>Happiness Level:{petInfo.happinessLevel}</p>
+      <p>Birthday:{petInfo.birthday}</p>
       <button onClick={playWithPet}>Play</button>
       <button onClick={feedPet}>Feed</button>
       <button onClick={scoldPet}>Scold</button>
       <button onClick={deletePet}>Delete</button>
-      <button>Home</button>
+      <button onClick={goHome}>Home</button>
     </div>
   )
 }

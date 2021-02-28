@@ -31,20 +31,12 @@ export function App() {
           <Route path="/pets/:id">
             <PetInfoPage />
           </Route>
+          <Route path="*">Not Found</Route>
         </Switch>
       </main>
       <footer>
         <h6>Created by: Corey Hall</h6>
       </footer>
-      {/* <Switch>
-        <Route exact path="/1">
-          Page 1
-        </Route>
-        <Route exact path="/2">
-          Page 2
-        </Route>
-        <Route path="*">Not Found</Route>
-      </Switch> */}
     </>
   )
 }

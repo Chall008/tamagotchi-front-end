@@ -32,7 +32,11 @@ export function PetListPage() {
       <h3>Current Pets:</h3>
       <ul className="pets">
         {Object.entries(pets).map(([petCode, petDetails]) => {
-          return <li key={petDetails.id}>{petDetails.name}</li>
+          return (
+            <li key={petDetails.id}>
+              <Link to={`/pets/${petDetails.id}`}>{petDetails.name} </Link>{' '}
+            </li>
+          )
         })}
         <form onSubmit={handleNewPet}>
           <input
