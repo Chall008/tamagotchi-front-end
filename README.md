@@ -1,4 +1,5 @@
-<img width="466" alt="Screen Shot 2021-03-04 at 2 17 51 PM" src="https://user-images.githubusercontent.com/76697333/110017690-7d3dd200-7cf4-11eb-9edb-d5dbf816b3bd.png">
+#Tamagotchi-Front-End
+
 
 Captured the home screen that displays the current lists of pets. Attached below is a video that has captures my use of an animated background:
 https://user-images.githubusercontent.com/76697333/110017767-947cbf80-7cf4-11eb-9c01-21a46615a723.mov
