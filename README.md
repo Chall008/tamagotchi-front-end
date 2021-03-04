@@ -17,6 +17,6 @@ Design a front end application that has multiple features and pages.
 	4. Make each pet on the home page a <Link> to a page showing the pet's detail. The detail page should show the name, birthday, hunger level, and happiness level.
 	5. On the detail page, add buttons to: -Play with the pet- -Feed the pet- -Scold the pet-
 	6. After each of the above actions, reload the data for the pet (use React to do this, NOT a force page reload)
-	7.Add a button to delete a pet. After deletion, redirect the user to the home page
-	8.Add a link on the detail page to navigate to the home page.
+	7. Add a button to delete a pet. After deletion, redirect the user to the home page
+	8. Add a link on the detail page to navigate to the home page.
 
