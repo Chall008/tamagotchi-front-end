@@ -1,4 +1,4 @@
-[#Tamagotchi-Front-End](https://tamagotchi-front-end-corey.netlify.app/)
+# [Tamagotchi](https://tamagotchi-front-end-corey.netlify.app/)
 
 
 
