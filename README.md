@@ -17,6 +17,8 @@ Assignemt Overview:
 Design a front end application that has multiple features and pages.
 
 
+
+	Here are some of the of the requirments:
 	1. Have fun with the styling. Make your CSS neat and presentable, but apply your creativity!
 	2. The home page should show a list of all the pets in your API. The listing should include their name, birthday, hunger level, and happiness level.
 	3. Add a form to your home page to input a new pet's name and use your "CREATE" API to make a new pet. The list of pets should refresh.
